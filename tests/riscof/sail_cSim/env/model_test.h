@@ -140,16 +140,16 @@ sw zero, 0x30(t0);
 #define RVMODEL_CLR_SSW_INT
 
 #define RVMODEL_MCLR_SSW_INT \
-csrrci t6, mip, 2; 
+csrci mip, 2; 
 
 #define RVMODEL_SCLR_SSW_INT \
-csrrci t6, sip, 2; 
+csrci sip, 2; 
 
 #define RVMODEL_CLR_STIMER_INT
 
 #define RVMODEL_MCLR_STIMER_INT \
 li t0, 32; \
-csrrc t6, mip, t0;
+csrc mip, t0;
 
 #define RVMODEL_SCLR_STIMER_INT
 
@@ -174,6 +174,5 @@ sw zero, 0x30(t0);
 #define RVMODEL_CLR_VSW_INT
 #define RVMODEL_CLR_VTIMER_INT
 #define RVMODEL_CLR_VEXT_INT
-
 
 #endif // _COMPLIANCE_MODEL_H
